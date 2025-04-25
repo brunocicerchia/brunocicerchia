@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import { motion } from "framer-motion";
@@ -7,12 +6,19 @@ import { Github, Code, Rocket, Star } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="bg-primary min-h-screen">
+    <div className="bg-gradient-cosmic min-h-screen">
       <Navigation />
       <Hero />
       
       {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-cosmic">
+      <motion.section 
+        id="about" 
+        className="py-20"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -28,10 +34,17 @@ const Index = () => {
             </p>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gradient-to-br from-white via-soft-purple/50 to-soft-purple/20 relative">
+      <motion.section 
+        id="skills" 
+        className="py-20 relative backdrop-blur-sm bg-white/5"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         {/* Dark stars background */}
         <div className="absolute inset-0 overflow-hidden">
           {[...Array(50)].map((_, i) => (
@@ -50,7 +63,15 @@ const Index = () => {
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <h2 className="text-4xl font-bold text-primary text-center mb-12">Skills</h2>
+          <motion.h2 
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-4xl font-bold text-white text-center mb-12"
+          >
+            Skills
+          </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
@@ -75,23 +96,30 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center border border-soft-purple/30 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex justify-center mb-4">{category.icon}</div>
-                <h3 className="text-xl font-bold text-primary mb-4">{category.title}</h3>
-                <ul className="text-gray-700 space-y-2">
+                <h3 className="text-xl font-bold text-white mb-4">{category.title}</h3>
+                <ul className="text-gray-200 space-y-2">
                   {category.skills.map((skill, i) => (
-                    <li key={i} className="bg-soft-purple/10 rounded-md py-1 px-2">{skill}</li>
+                    <li key={i} className="bg-white/5 rounded-md py-1 px-2 backdrop-blur-sm">{skill}</li>
                   ))}
                 </ul>
               </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gradient-cosmic">
+      <motion.section 
+        id="projects" 
+        className="py-20"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-white text-center mb-12">Featured Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -119,10 +147,17 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-primary">
+      <motion.section 
+        id="contact" 
+        className="py-20"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -140,7 +175,7 @@ const Index = () => {
             </Button>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

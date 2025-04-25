@@ -1,3 +1,4 @@
+
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import { motion } from "framer-motion";
@@ -30,13 +31,13 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-white relative">
+      <section id="skills" className="py-20 bg-gradient-to-br from-white via-soft-purple/50 to-soft-purple/20 relative">
         {/* Dark stars background */}
         <div className="absolute inset-0 overflow-hidden">
           {[...Array(50)].map((_, i) => (
             <div
               key={i}
-              className="absolute bg-black/70 rounded-full"
+              className="absolute bg-black/50 rounded-full"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
@@ -53,17 +54,17 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                icon: <Code className="h-8 w-8 mb-4 text-primary" />,
+                icon: <Code className="h-8 w-8 mb-4 text-vivid-purple" />,
                 title: "Frontend",
                 skills: ["React", "TypeScript", "Tailwind CSS"],
               },
               {
-                icon: <Rocket className="h-8 w-8 mb-4 text-primary" />,
+                icon: <Rocket className="h-8 w-8 mb-4 text-ocean-blue" />,
                 title: "Backend",
                 skills: ["Node.js", "Python", "PostgreSQL"],
               },
               {
-                icon: <Star className="h-8 w-8 mb-4 text-primary" />,
+                icon: <Star className="h-8 w-8 mb-4 text-magenta-pink" />,
                 title: "Tools",
                 skills: ["Git", "Docker", "AWS"],
               },
@@ -74,13 +75,13 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white/80 backdrop-blur-sm rounded-lg p-6 text-center border border-gray-200 shadow-lg"
+                className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center border border-soft-purple/30 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="flex justify-center">{category.icon}</div>
+                <div className="flex justify-center mb-4">{category.icon}</div>
                 <h3 className="text-xl font-bold text-primary mb-4">{category.title}</h3>
-                <ul className="text-gray-700">
+                <ul className="text-gray-700 space-y-2">
                   {category.skills.map((skill, i) => (
-                    <li key={i} className="mb-2">{skill}</li>
+                    <li key={i} className="bg-soft-purple/10 rounded-md py-1 px-2">{skill}</li>
                   ))}
                 </ul>
               </motion.div>

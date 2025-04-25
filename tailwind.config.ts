@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -41,6 +40,10 @@ export default {
           DEFAULT: "#FFFFFF",
           dim: "#CCCCCC",
         },
+        'vivid-purple': '#8B5CF6',
+        'ocean-blue': '#0EA5E9',
+        'magenta-pink': '#D946EF',
+        'soft-purple': '#E5DEFF',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

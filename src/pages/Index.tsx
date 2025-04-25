@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import { motion } from "framer-motion";
@@ -31,23 +30,40 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-primary">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-white text-center mb-12">Skills</h2>
+      <section id="skills" className="py-20 bg-white relative">
+        {/* Dark stars background */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(50)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute bg-black/70 rounded-full"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                width: `${Math.random() * 3}px`,
+                height: `${Math.random() * 3}px`,
+                animationDelay: `${Math.random() * 2}s`,
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
+          <h2 className="text-4xl font-bold text-primary text-center mb-12">Skills</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                icon: <Code className="h-8 w-8 mb-4" />,
+                icon: <Code className="h-8 w-8 mb-4 text-primary" />,
                 title: "Frontend",
                 skills: ["React", "TypeScript", "Tailwind CSS"],
               },
               {
-                icon: <Rocket className="h-8 w-8 mb-4" />,
+                icon: <Rocket className="h-8 w-8 mb-4 text-primary" />,
                 title: "Backend",
                 skills: ["Node.js", "Python", "PostgreSQL"],
               },
               {
-                icon: <Star className="h-8 w-8 mb-4" />,
+                icon: <Star className="h-8 w-8 mb-4 text-primary" />,
                 title: "Tools",
                 skills: ["Git", "Docker", "AWS"],
               },
@@ -58,11 +74,11 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white/5 backdrop-blur-sm rounded-lg p-6 text-center"
+                className="bg-white/80 backdrop-blur-sm rounded-lg p-6 text-center border border-gray-200 shadow-lg"
               >
-                <div className="text-secondary flex justify-center">{category.icon}</div>
-                <h3 className="text-xl font-bold text-white mb-4">{category.title}</h3>
-                <ul className="text-gray-300">
+                <div className="flex justify-center">{category.icon}</div>
+                <h3 className="text-xl font-bold text-primary mb-4">{category.title}</h3>
+                <ul className="text-gray-700">
                   {category.skills.map((skill, i) => (
                     <li key={i} className="mb-2">{skill}</li>
                   ))}

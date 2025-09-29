@@ -65,8 +65,6 @@ const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
               </li>
             ))}
           </ul>
-
-
         </div>
       </div>
     </nav>

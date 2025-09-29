@@ -147,7 +147,7 @@
   background-color: var(--pixel-bg-tertiary);
   border: var(--pixel-border-width) solid var(--pixel-border);
   color: var(--pixel-text-primary);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
@@ -446,12 +446,12 @@
     flex-direction: column;
     gap: calc(var(--pixel-unit) * 2);
   }
-  
+
   .github-star-btn {
     padding: calc(var(--pixel-unit) * 1.5) calc(var(--pixel-unit) * 2);
     font-size: 11px;
   }
-  
+
   .floating-language-selector .language-btn {
     padding: calc(var(--pixel-unit) * 1.5) calc(var(--pixel-unit) * 2);
     min-width: 45px;

@@ -1,75 +1,66 @@
-import { Github, Linkedin, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { SectionKey } from "../data/sectionContents";
 
-const Navigation = () => {
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+interface NavItem {
+  label: string;
+  href: string;
+  command?: string;
+}
+
+interface NavigationProps {
+  activeSection: SectionKey;
+  onSectionChange: (section: SectionKey) => void;
+}
+
+const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navItems: NavItem[] = [
+    { label: "HOME", href: "#home", command: "cd ~/" },
+    { label: "ABOUT", href: "#about", command: "cat about.txt" },
+    { label: "PROJECTS", href: "#projects", command: "ls projects/" },
+    { label: "SKILLS", href: "#skills", command: "grep -r skills" },
+    { label: "CONTACT", href: "#contact", command: "mail -s contact" },
+  ];
+
+  const handleNavClick = (item: NavItem) => {
+    const sectionKey = item.label.toLowerCase() as SectionKey;
+    onSectionChange(sectionKey);
+    setIsMenuOpen(false);
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-cosmic bg-opacity-90 backdrop-blur-sm">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="text-white font-bold text-xl">Bruno Cicerchia</div>
-        <div className="hidden md:flex space-x-8">
+    <nav className="pixel-nav">
+      <div className="pixel-container">
+        {/* Mobile menu toggle */}
+        <div className="mobile-menu-toggle">
           <button
-            onClick={() => scrollToSection("about")}
-            className="text-white hover:text-secondary transition-colors"
+            className="pixel-button menu-btn"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            Sobre Mi
-          </button>
-          <button
-            onClick={() => scrollToSection("skills")}
-            className="text-white hover:text-secondary transition-colors"
-          >
-            Habilidades
-          </button>
-          <button
-            onClick={() => scrollToSection("projects")}
-            className="text-white hover:text-secondary transition-colors"
-          >
-            Proyectos
-          </button>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="text-white hover:text-secondary transition-colors"
-          >
-            Contacto
+            <span className="pixel-text">[MENU]</span>
           </button>
         </div>
-        <div className="flex space-x-4">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-white hover:bg-secondary"
-            onClick={() =>
-              window.open("https://github.com/brunocicerchia", "_blank")
-            }
-          >
-            <Github className="h-5 w-5" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-white hover:bg-secondary"
-            onClick={() =>
-              window.open(
-                "https://www.linkedin.com/in/brunocicerchia",
-                "_blank"
-              )
-            }
-          >
-            <Linkedin className="h-5 w-5" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-white hover:bg-secondary"
-            onClick={() =>
-              window.open("mailto:brunocicerchia.dev@gmail.com", "_blank")
-            }
-          >
-            <Mail className="h-5 w-5" />
-          </Button>
+
+        {/* Navigation squares */}
+        <div className={`nav-menu ${isMenuOpen ? "mobile-open" : ""}`}>
+          <ul className="nav-list">
+            {navItems.map((item) => (
+              <li key={item.label} className="nav-item">
+                <a
+                  href={item.href}
+                  className={`nav-link ${
+                    activeSection === item.label.toLowerCase() ? "active" : ""
+                  }`}
+                  onClick={() => handleNavClick(item)}
+                >
+                  <span className="nav-bracket">[</span>
+                  <span className="nav-label">{item.label}</span>
+                  <span className="nav-bracket">]</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </nav>

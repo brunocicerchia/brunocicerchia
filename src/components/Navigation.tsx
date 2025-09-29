@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { SectionKey } from "../data/sectionContents";
+import { useTranslation } from "../hooks/useTranslation";
+import { SectionKey } from "../data/translations";
 
 interface NavItem {
-  label: string;
+  key: string;
   href: string;
   command?: string;
 }
@@ -14,17 +15,18 @@ interface NavigationProps {
 
 const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   const navItems: NavItem[] = [
-    { label: "HOME", href: "#home", command: "cd ~/" },
-    { label: "ABOUT", href: "#about", command: "cat about.txt" },
-    { label: "PROJECTS", href: "#projects", command: "ls projects/" },
-    { label: "SKILLS", href: "#skills", command: "grep -r skills" },
-    { label: "CONTACT", href: "#contact", command: "mail -s contact" },
+    { key: "home", href: "#home", command: "cd ~/" },
+    { key: "about", href: "#about", command: "cat about.txt" },
+    { key: "projects", href: "#projects", command: "ls projects/" },
+    { key: "skills", href: "#skills", command: "grep -r skills" },
+    { key: "contact", href: "#contact", command: "mail -s contact" },
   ];
 
   const handleNavClick = (item: NavItem) => {
-    const sectionKey = item.label.toLowerCase() as SectionKey;
+    const sectionKey = item.key as SectionKey;
     onSectionChange(sectionKey);
     setIsMenuOpen(false);
   };
@@ -46,21 +48,25 @@ const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
         <div className={`nav-menu ${isMenuOpen ? "mobile-open" : ""}`}>
           <ul className="nav-list">
             {navItems.map((item) => (
-              <li key={item.label} className="nav-item">
+              <li key={item.key} className="nav-item">
                 <a
                   href={item.href}
                   className={`nav-link ${
-                    activeSection === item.label.toLowerCase() ? "active" : ""
+                    activeSection === item.key ? "active" : ""
                   }`}
                   onClick={() => handleNavClick(item)}
                 >
                   <span className="nav-bracket">[</span>
-                  <span className="nav-label">{item.label}</span>
+                  <span className="nav-label">
+                    {t(`navigation.${item.key}`)}
+                  </span>
                   <span className="nav-bracket">]</span>
                 </a>
               </li>
             ))}
           </ul>
+
+
         </div>
       </div>
     </nav>

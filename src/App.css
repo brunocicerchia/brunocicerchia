@@ -122,6 +122,97 @@
   font-weight: 700;
 }
 
+/* ==============================================
+   FLOATING ACTIONS STYLES
+   ============================================== */
+.floating-actions {
+  position: fixed;
+  top: calc(var(--pixel-unit) * 4);
+  right: calc(var(--pixel-unit) * 4);
+  display: flex;
+  align-items: center;
+  gap: calc(var(--pixel-unit) * 3);
+  z-index: 1000;
+  background-color: var(--pixel-bg-primary);
+  padding: calc(var(--pixel-unit) * 2);
+  border: var(--pixel-border-width) solid var(--pixel-border);
+  border-radius: 0;
+}
+
+.github-star-btn {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--pixel-unit) * 2);
+  padding: calc(var(--pixel-unit) * 2) calc(var(--pixel-unit) * 3);
+  background-color: var(--pixel-bg-tertiary);
+  border: var(--pixel-border-width) solid var(--pixel-border);
+  color: var(--pixel-text-primary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.github-star-btn:hover {
+  background-color: var(--pixel-bg-secondary);
+  border-color: var(--pixel-accent-yellow);
+  color: var(--pixel-accent-yellow);
+  transform: translateY(-1px);
+}
+
+.github-star-btn .github-icon {
+  font-size: 14px;
+  color: var(--pixel-accent-yellow);
+}
+
+.floating-language-selector {
+  display: flex;
+  gap: calc(var(--pixel-unit) * 1);
+}
+
+.floating-language-selector .language-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--pixel-unit) * 2) calc(var(--pixel-unit) * 2.5);
+  background-color: var(--pixel-bg-tertiary);
+  border: var(--pixel-border-width) solid var(--pixel-border);
+  color: var(--pixel-text-primary);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 50px;
+}
+
+.floating-language-selector .language-btn:hover {
+  background-color: var(--pixel-bg-secondary);
+  border-color: var(--pixel-border-hover);
+  color: var(--pixel-accent-cyan);
+}
+
+.floating-language-selector .language-btn.active {
+  background-color: var(--pixel-bg-secondary);
+  color: var(--pixel-accent-cyan);
+  border-color: var(--pixel-accent-cyan);
+}
+
+.floating-language-selector .language-btn .nav-bracket {
+  color: var(--pixel-accent-yellow);
+  font-weight: 700;
+}
+
+.floating-language-selector .language-btn .nav-label {
+  margin: 0 calc(var(--pixel-unit) * 1);
+}
+
 .breadcrumb {
   margin-top: calc(var(--pixel-unit) * 2);
   padding: calc(var(--pixel-unit) * 2);
@@ -345,6 +436,26 @@
 
   .terminal-content {
     padding: calc(var(--pixel-unit) * 4);
+  }
+
+  /* Mobile responsiveness for floating actions */
+  .floating-actions {
+    top: calc(var(--pixel-unit) * 2);
+    right: calc(var(--pixel-unit) * 2);
+    padding: calc(var(--pixel-unit) * 1.5);
+    flex-direction: column;
+    gap: calc(var(--pixel-unit) * 2);
+  }
+  
+  .github-star-btn {
+    padding: calc(var(--pixel-unit) * 1.5) calc(var(--pixel-unit) * 2);
+    font-size: 11px;
+  }
+  
+  .floating-language-selector .language-btn {
+    padding: calc(var(--pixel-unit) * 1.5) calc(var(--pixel-unit) * 2);
+    min-width: 45px;
+    font-size: 10px;
   }
 }
 

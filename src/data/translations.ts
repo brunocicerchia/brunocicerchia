@@ -77,30 +77,33 @@ const es = {
       command: "grep -r skills",
       title: "HABILIDADES TÉCNICAS",
       asciiArt: `   ⚡ LENGUAJES DE PROGRAMACIÓN
-   ████████████████████ JavaScript 95%
-   ███████████████████  TypeScript 90%
-   ██████████████████   Python     85%
-   ████████████████     Java       80%
+     __     ____  
+    / /    / /\\ \\ 
+   / /    / /  \\ \\
+   \\ \\   / /   / /
+    \\_\\ /_/   /_/ 
+   
+   JavaScript | TypeScript | Python | Java
    
    🛠️ FRAMEWORKS & TOOLS
    React | Node.js | Express | MongoDB`,
       content: [
         "Frontend: React, Next.js, Vue.js, HTML5, CSS3",
-        "Backend: Node.js, Express, Python, Django",
+        "Backend: Node.js, Express, Python, Django, Spring Boot",
         "Databases: MongoDB, PostgreSQL, MySQL",
         "DevOps: Docker, AWS, Git, CI/CD",
-        "Mobile: React Native, Flutter"
+        "Mobile: React Native, Android Studio"
       ]
     },
     contact: {
       command: "mail -s contact",
       title: "INFORMACIÓN DE CONTACTO",
       asciiArt: `   📬 ENVIAR MENSAJE
-   ┌─────────────────────────────────┐
-   │  De: visitante@portfolio.com    │
-   │  Para: bruno@ejemplo.com        │
-   │  Asunto: Contacto desde web     │
-   └─────────────────────────────────┘
+   ┌───────────────────────────────────────────────┐
+   │  De: visitante@portfolio.com                  │
+   │  Para: brunocicerchia.dev@gmail.com           │
+   │  Asunto: Contacto desde web                   │
+   └───────────────────────────────────────────────┘
    
    Estado: Listo para enviar`,
       content: [
@@ -196,30 +199,33 @@ const en = {
       command: "grep -r skills",
       title: "TECHNICAL SKILLS",
       asciiArt: `   ⚡ PROGRAMMING LANGUAGES
-   ████████████████████ JavaScript 95%
-   ███████████████████  TypeScript 90%
-   ██████████████████   Python     85%
-   ████████████████     Java       80%
+     __     ____  
+    / /    / /\\ \\ 
+   / /    / /  \\ \\
+   \\ \\   / /   / /
+    \\_\\ /_/   /_/ 
+   
+   JavaScript | TypeScript | Python | Java
    
    🛠️ FRAMEWORKS & TOOLS
    React | Node.js | Express | MongoDB`,
       content: [
         "Frontend: React, Next.js, Vue.js, HTML5, CSS3",
-        "Backend: Node.js, Express, Python, Django",
+        "Backend: Node.js, Express, Python, Django, Spring Boot",
         "Databases: MongoDB, PostgreSQL, MySQL",
         "DevOps: Docker, AWS, Git, CI/CD",
-        "Mobile: React Native, Flutter"
+        "Mobile: React Native, Android Studio"
       ]
     },
     contact: {
       command: "mail -s contact",
       title: "CONTACT INFORMATION",
       asciiArt: `   📬 SEND MESSAGE
-   ┌─────────────────────────────────┐
-   │  From: visitor@portfolio.com    │
-   │  To: bruno@example.com          │
-   │  Subject: Contact from website  │
-   └─────────────────────────────────┘
+   ┌───────────────────────────────────────────────┐
+   │  From: visitor@portfolio.com                  │
+   │  To: brunocicerchia.dev@gmail.com             │
+   │  Subject: Contact from website                │
+   └───────────────────────────────────────────────┘
    
    Status: Ready to send`,
       content: [

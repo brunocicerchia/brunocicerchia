@@ -52,7 +52,6 @@ const es = {
         "Desarrollador Full Stack apasionado por la tecnología",
         "Experiencia en JavaScript, React, Node.js y más",
         "Siempre aprendiendo nuevas tecnologías y herramientas",
-        "Me gusta resolver problemas complejos con código elegante"
       ]
     },
     projects: {
@@ -108,7 +107,6 @@ const es = {
         "📧 Email: brunocicerchia.dev@gmail.com",
         "💼 LinkedIn: /in/brunocicerchia",
         "🐙 GitHub: /brunocicerchia",
-        "📱 Teléfono: +54 9 11 XXXX-XXXX",
         "¡Estoy disponible para nuevos proyectos!"
       ]
     }

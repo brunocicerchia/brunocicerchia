@@ -14,7 +14,10 @@ const FloatingActions = () => {
   };
 
   const handleGitHubStar = () => {
-    window.open("https://github.com/brunocicerchia/brunocicerchia", "_blank");
+    window.open(
+      "https://github.com/brunocicerchia/portfolio-retro-linux",
+      "_blank"
+    );
   };
 
   return (
